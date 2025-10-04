@@ -1,27 +1,14 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans Variable';
-    src: url('PlusJakartaSans-VariableFont_wght.ttf') format('truetype-variations');
-    font-weight: 200 800;
-    /* Esto define el rango de grosores disponibles */
-    font-style: normal;
+    /* box-sizing: border-box; */
 }
 
 body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     font-family: 'Plus Jakarta Sans Variable', sans-serif;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 100px;
-    grid-template-areas:
-        "   main    "
-        "   footer  "
-    ;
     background-color: rgba(190, 238, 245, 0.668);
 }
 
@@ -33,41 +20,37 @@ footer {
 }
 
 main {
-    display: flex;
-    grid-area: main;
-    padding: 5rem;
+    display: grid;
+    margin: 5rem;
     justify-content: center;
     align-items: center;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 2rem;
-    border: solid 0.1px black;
-}
-
-.container-formulario {
-    background-color: white;
+    border: solid 1.3px rgba(46, 94, 94, 0.445);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "container-formulario       container-results"
+    ;
 }
 
 form {
+    all: unset;
     display: grid;
+    padding: 2rem;
+    grid-area: container-formulario;
     gap: 1rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        "   h2          clear-all  "
-        "   label-1     label-1    "
-        "   label-2     label-3    "
-        "   lable-0     label-0    "
-        "   label-4     label-4    "
-        "   label-5     label-5    "
-        "   label-6     label-6    "
+        "h2          clear-all"
+        "label-1     label-1"
+        "label-2     label-3"
+        /* "label-3     label-3" */
+        "lable-0     label-0"
+        "label-4     label-4"
+        "label-5     label-5"
+        "label-6     label-6"
     ;
+    background-color: white;
+
+
 }
 
 .clear-all {
@@ -81,16 +64,15 @@ form {
 .label-1 {
     display: grid;
     grid-area: label-1;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     gap: 10px;
     grid-template-areas:
-        "   p       p       "
+        "   p   "
     ;
 }
 
 .label-1 div {
     display: flex;
-    width: 100%;
     border-radius: 5px;
     border: solid 1.3px rgba(46, 94, 94, 0.445);
 }
@@ -98,7 +80,6 @@ form {
 .label-1 span {
     font-family: 'Plus Jakarta Sans Variable', monospace;
     padding: 10px;
-    width: 50px;
     text-align: center;
     font-size: larger;
     font-weight: 550;
@@ -117,8 +98,21 @@ form {
 .label-2 {
     display: grid;
     gap: 10px;
+    justify-content: flex-start;
     grid-area: label-2;
-    grid-template-columns: 1fr;
+    /* grid-template-columns: auto; */
+    grid-template-areas:
+        "   p   "
+    ;
+}
+
+
+.label-3 {
+    display: grid;
+    justify-content: flex-end;
+    gap: 10px;
+    grid-area: label-3;
+    /* grid-template-columns: auto; */
     grid-template-areas:
         "   p   "
     ;
@@ -134,11 +128,8 @@ form {
 
 .label-2 span,
 .label-3 span {
-    font-family: 'Plus Jakarta Sans Variable', monospace;
-    padding: 15px;
-    /* width: 80px; */
+    padding: 10px;
     text-align: center;
-    font-size: 20px;
     font-weight: 550;
     border-radius: 4px 0px 0px 4px;
     background-color: rgb(195, 236, 236);
@@ -150,17 +141,6 @@ form {
     all: unset;
     padding-left: 20px;
     font-weight: 550;
-    font-size: large;
-}
-
-.label-3 {
-    display: grid;
-    gap: 10px;
-    grid-area: label-3;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "   p   "
-    ;
 }
 
 .label-4 {
@@ -195,6 +175,7 @@ form {
     justify-content: center;
     align-items: center;
     width: 305px;
+    margin-top: 1rem;
     background-color: rgba(165, 200, 51, 0.563);
     border-radius: 35px;
 }
@@ -209,7 +190,6 @@ form {
     all: unset;
     font-size: large;
     font-weight: 550;
-
 }
 
 .label-4 input:checked {
@@ -218,7 +198,6 @@ form {
 
 .label-4 div:has(input[type="radio"]:checked) {
     background-color: rgba(255, 255, 0, 0.068);
-    color: white;
     border-color: rgba(220, 220, 101, 0.767);
 }
 
@@ -228,11 +207,22 @@ form {
 
 .label-5 div:has(input[type="radio"]:checked) {
     background-color: rgba(255, 255, 0, 0.068);
-    color: white;
     border-color: rgba(220, 220, 101, 0.871);
 }
 
 p {
     grid-area: p;
     color: rgb(76, 123, 123);
+}
+
+/* tarjeta de respuesta */
+.container-results {
+    display: grid;
+    grid-area: container-results;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "titulo"
+        "resultados"
+    ;
+    padding: 2rem;
 }

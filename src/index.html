@@ -15,7 +15,7 @@
 
 <body>
 	<main>
-		<div class="container container-formulario">
+		<div class="container-formulario">
 			<form action="">
 				<h2>Mortgage Calculator</h2>
 				<div>
@@ -53,13 +53,13 @@
 				<label class="label-4">
 					<div>
 						<input class="repayment" type="radio">
-						<p>Repayment</p>
+						Repayment
 					</div>
 				</label>
 				<label class="label-5">
 					<div>
 						<input class="interest-only" type="radio">
-						<p>Interest Only</p>
+						Interest Only
 					</div>
 				</label>
 				<label class="label-6">
@@ -70,46 +70,41 @@
 				</label>
 			</form>
 		</div>
-		<br>
-
-		<div class="container">
-			<!-- Empty results start -->
-			<!-- Empty results end -->
+		<div class="container-results">
 			<!-- Completed results start -->
-			<h3>
-				Your results
-			</h3>
-			<p>
-				Your results are shown below based on the information you provided.
-				To adjust the results, edit the form and click “calculate repayments” again.
-			</p>
-			<div>
-
-				Your monthly repayments
+			<div class="titulo">
+				<h2>
+					Your results
+				</h2>
+				<p>
+					Your results are shown below based on the information you provided.
+					To adjust the results, edit the form and click “calculate repayments” again.
+				</p>
+			</div>
+			<div class="resultados">
+				<!-- Empty results start -->
+				<p>Your monthly repayments</p>
 				<h1 class="test-operations">
-					<span>
-						£
-					</span>TEST: 0
+					<span>£</span>TEST: 0
 				</h1>
 
-				Total you'll repay over the term
+				<p>Total you'll repay over the term</p>
 				<!-- Completed results end -->
-				<h3 class="test-operations-repayment">
+				<h2 class="test-operations-repayment">
 					<span>
 						£
 					</span>TEST: 0
-				</h3>
+				</h2>
 
-				Total interest
-				<h3 class="test-operations-interest">
+				<p>Total interest</p>
+				<h2 class="test-operations-interest">
 					<span>
 						£
 					</span>TEST: 0
-				</h3>
+				</h2>
 			</div>
 		</div>
 	</main>
-
 	<footer class="attribution">
 		Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
 		Coded by <a href="#">Armando Estevez</a>.
