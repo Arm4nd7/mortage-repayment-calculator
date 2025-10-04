@@ -13,43 +13,60 @@
 	<title>Frontend Mentor | Mortgage repayment calculator</title>
 </head>
 
-<body> 
+<body>
 	<main>
 		<div class="container container-formulario">
 			<form action="">
 				<h2>Mortgage Calculator</h2>
-				<label class="clear-all" for="clear-all">Clear All</label>
-				<input hidden id="clear-all" type="reset">
+				<div>
+					<label class="clear-all" for="clear-all">Clear All</label>
+					<input hidden id="clear-all" type="reset">
+				</div>
 
-				<label class="label-1"> 
+				<label class="label-1">
 					<p>Mortgage Amount</p>
-					
-					<span class="material-symbols-outlined">
-						currency_pound
-					</span>
-					<input class="amount" type="text">
+					<div>
+						<span>
+							£
+						</span>
+						<input class="amount" type="text">
+					</div>
 				</label>
 
-				<label class="label-2"> Mortgage Term
-					<input class="term" type="text">
-					<i>year</i>
+				<label class="label-2">
+					<p>Mortgage Term</p>
+					<div>
+						<input class="term" type="text">
+						<span>years</span>
+					</div>
 				</label>
-				<label class="label-3"> Interest Rate
-					<input class="interest" type="text">
-					<span class="material-symbols-outlined">
-						percent
-					</span>
+				<label class="label-3">
+					<p>Interest Rate</p>
+					<div>
+						<input class="interest" type="text">
+						<span>%</span>
+					</div>
 				</label>
-				<label>Mortgage Type</label>
-				<label class="label-4">Repayment
-					<input class="repayment" type="radio">
+				<label class="label-0">
+					<p>Mortgage Type</p>
 				</label>
-				<label class="label-5">Interest Only
-					<input class="interest-only" type="radio">
+				<label class="label-4">
+					<div>
+						<input class="repayment" type="radio">
+						<p>Repayment</p>
+					</div>
+				</label>
+				<label class="label-5">
+					<div>
+						<input class="interest-only" type="radio">
+						<p>Interest Only</p>
+					</div>
 				</label>
 				<label class="label-6">
-					<button><img src="./assets/images/icon-calculator.svg" alt="img-calculator">Calculate
-						Repayments</button>
+					<div>
+						<img src="./assets/images/icon-calculator.svg" alt="img-calculator">
+						<button>Calculate Repayments</button>
+					</div>
 				</label>
 			</form>
 		</div>
@@ -70,23 +87,23 @@
 
 				Your monthly repayments
 				<h1 class="test-operations">
-					<span class="material-symbols-outlined">
-						currency_pound
+					<span>
+						£
 					</span>TEST: 0
 				</h1>
 
 				Total you'll repay over the term
 				<!-- Completed results end -->
 				<h3 class="test-operations-repayment">
-					<span class="material-symbols-outlined">
-						currency_pound
+					<span>
+						£
 					</span>TEST: 0
 				</h3>
 
 				Total interest
 				<h3 class="test-operations-interest">
-					<span class="material-symbols-outlined">
-						currency_pound
+					<span>
+						£
 					</span>TEST: 0
 				</h3>
 			</div>

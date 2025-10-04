@@ -19,7 +19,8 @@ let formatter = new Intl.NumberFormat("en-US", {
 });
 
 
-buttonCalculator.addEventListener("click", () => {
+buttonCalculator.addEventListener("click", (e) => {
+    e.preventDefault();
     //calculo de interes
     i = (parseFloat(interestRate.value) / 100) / 12;
     //total de pagos

@@ -4,10 +4,18 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Plus Jakarta Sans Variable';
+    src: url('PlusJakartaSans-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 200 800;
+    /* Esto define el rango de grosores disponibles */
+    font-style: normal;
+}
+
 body {
     display: grid;
     min-height: 100vh;
-    font-family: "PlusJakartaSans", sans-serif;
+    font-family: 'Plus Jakarta Sans Variable', sans-serif;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 100px;
     grid-template-areas:
@@ -37,10 +45,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid 0.1px black;
     width: 100%;
     height: 100%;
     padding: 2rem;
+    border: solid 0.1px black;
 }
 
 .container-formulario {
@@ -49,59 +57,182 @@ main {
 
 form {
     display: grid;
-    grid-template-columns: 200px 200px;
-    grid-template-areas: 
-    "   h2        clear-all  "
-    "   label-1    label-1    "
-    "   label-2    label-3    "
-    "   label-4    label-4    "
-    "   label-5    label-5    "
-    "   label-6    label-6    "
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "   h2          clear-all  "
+        "   label-1     label-1    "
+        "   label-2     label-3    "
+        "   lable-0     label-0    "
+        "   label-4     label-4    "
+        "   label-5     label-5    "
+        "   label-6     label-6    "
     ;
 }
 
-label{
+.clear-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: end;
+    text-decoration: underline;
+}
+
+.label-1 {
     display: grid;
+    grid-area: label-1;
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    gap: 10px;
+    grid-template-areas:
         "   p       p       "
-        "   span    input   "
     ;
 }
 
-span{
-    grid-area: span;
+.label-1 div {
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1.3px rgba(46, 94, 94, 0.445);
 }
 
-p{
-    grid-area: p;
+.label-1 span {
+    font-family: 'Plus Jakarta Sans Variable', monospace;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 550;
+    border-radius: 4px 0px 0px 4px;
+    background-color: rgb(195, 236, 236);
+    color: rgb(71, 116, 116);
 }
 
-input{
-    grid-area: input;
+.label-1 input {
+    all: unset;
+    padding-left: 20px;
+    font-weight: 550;
+    font-size: large;
 }
 
-.label-1{
-    grid-area: label-1;
-    background-color: antiquewhite;
-}
-.label-2{
+.label-2 {
+    display: grid;
+    gap: 10px;
     grid-area: label-2;
-    background-color: rgb(222, 46, 143);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "   p   "
+    ;
 }
-.label-3{
+
+.label-2 div,
+.label-3 div {
+    display: flex;
+    border-radius: 5px;
+    border: solid 1.3px rgba(46, 94, 94, 0.445);
+}
+
+
+.label-2 span,
+.label-3 span {
+    font-family: 'Plus Jakarta Sans Variable', monospace;
+    padding: 15px;
+    /* width: 80px; */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 550;
+    border-radius: 4px 0px 0px 4px;
+    background-color: rgb(195, 236, 236);
+    color: rgb(71, 116, 116);
+}
+
+.label-2 input,
+.label-3 input {
+    all: unset;
+    padding-left: 20px;
+    font-weight: 550;
+    font-size: large;
+}
+
+.label-3 {
+    display: grid;
+    gap: 10px;
     grid-area: label-3;
-    background-color: rgb(173, 110, 27);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "   p   "
+    ;
 }
-.label-4{
+
+.label-4 {
+    display: grid;
     grid-area: label-4;
-    background-color: rgb(18, 163, 49);
+    font-size: large;
+    font-weight: 550;
+
 }
-.label-5{
+
+.label-4 div,
+.label-5 div {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    border: solid 1.3px rgba(46, 94, 94, 0.445);
+
+}
+
+.label-5 {
+    display: grid;
     grid-area: label-5;
-    background-color: rgb(152, 177, 49);
+    font-size: large;
+    font-weight: 550;
+
 }
-.label-6{
+
+.label-6 {
+    display: grid;
     grid-area: label-6;
-    background-color: rgb(53, 168, 194);
+    justify-content: center;
+    align-items: center;
+    width: 305px;
+    background-color: rgba(165, 200, 51, 0.563);
+    border-radius: 35px;
+}
+
+.label-6 div {
+    display: flex;
+    padding: 15px 30px 15px;
+    gap: 15px;
+}
+
+.label-6 button {
+    all: unset;
+    font-size: large;
+    font-weight: 550;
+
+}
+
+.label-4 input:checked {
+    accent-color: yellow;
+}
+
+.label-4 div:has(input[type="radio"]:checked) {
+    background-color: rgba(255, 255, 0, 0.068);
+    color: white;
+    border-color: rgba(220, 220, 101, 0.767);
+}
+
+.label-5 input:checked {
+    accent-color: yellow;
+}
+
+.label-5 div:has(input[type="radio"]:checked) {
+    background-color: rgba(255, 255, 0, 0.068);
+    color: white;
+    border-color: rgba(220, 220, 101, 0.871);
+}
+
+p {
+    grid-area: p;
+    color: rgb(76, 123, 123);
 }
