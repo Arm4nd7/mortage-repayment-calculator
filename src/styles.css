@@ -1,7 +1,107 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
+    display: grid;
+    min-height: 100vh;
+    font-family: "PlusJakartaSans", sans-serif;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 100px;
+    grid-template-areas:
+        "   main    "
+        "   footer  "
+    ;
     background-color: rgba(190, 238, 245, 0.668);
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    margin-top: auto;
+    width: auto;
+}
+
+main {
+    display: flex;
+    grid-area: main;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 0.1px black;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.container-formulario {
+    background-color: white;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-areas: 
+    "   h2        clear-all  "
+    "   label-1    label-1    "
+    "   label-2    label-3    "
+    "   label-4    label-4    "
+    "   label-5    label-5    "
+    "   label-6    label-6    "
+    ;
+}
+
+label{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "   p       p       "
+        "   span    input   "
+    ;
+}
+
+span{
+    grid-area: span;
+}
+
+p{
+    grid-area: p;
+}
+
+input{
+    grid-area: input;
+}
+
+.label-1{
+    grid-area: label-1;
+    background-color: antiquewhite;
+}
+.label-2{
+    grid-area: label-2;
+    background-color: rgb(222, 46, 143);
+}
+.label-3{
+    grid-area: label-3;
+    background-color: rgb(173, 110, 27);
+}
+.label-4{
+    grid-area: label-4;
+    background-color: rgb(18, 163, 49);
+}
+.label-5{
+    grid-area: label-5;
+    background-color: rgb(152, 177, 49);
+}
+.label-6{
+    grid-area: label-6;
+    background-color: rgb(53, 168, 194);
 }

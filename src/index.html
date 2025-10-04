@@ -2,106 +2,102 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=percentcurrency_pound" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=percentcurrency_pound" />
 
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
+	<title>Frontend Mentor | Mortgage repayment calculator</title>
 </head>
 
-<body>
+<body> 
+	<main>
+		<div class="container container-formulario">
+			<form action="">
+				<h2>Mortgage Calculator</h2>
+				<label class="clear-all" for="clear-all">Clear All</label>
+				<input hidden id="clear-all" type="reset">
 
-  <h1>Mortgage Calculator</h1>
-  <form action="">
-    <label for="clear-all">Clear All</label>
-    <input hidden id="clear-all" type="reset">
+				<label class="label-1"> 
+					<p>Mortgage Amount</p>
+					
+					<span class="material-symbols-outlined">
+						currency_pound
+					</span>
+					<input class="amount" type="text">
+				</label>
 
-    <label> Mortgage Amount
-      <span class="material-symbols-outlined">
-        currency_pound
-      </span>
-      <input class="amount" type="text">
-    </label>
+				<label class="label-2"> Mortgage Term
+					<input class="term" type="text">
+					<i>year</i>
+				</label>
+				<label class="label-3"> Interest Rate
+					<input class="interest" type="text">
+					<span class="material-symbols-outlined">
+						percent
+					</span>
+				</label>
+				<label>Mortgage Type</label>
+				<label class="label-4">Repayment
+					<input class="repayment" type="radio">
+				</label>
+				<label class="label-5">Interest Only
+					<input class="interest-only" type="radio">
+				</label>
+				<label class="label-6">
+					<button><img src="./assets/images/icon-calculator.svg" alt="img-calculator">Calculate
+						Repayments</button>
+				</label>
+			</form>
+		</div>
+		<br>
 
-    <label> Mortgage Term
-      <input class="term" type="text">
-      <i>year</i>
-    </label>
-    <label> Interest Rate
-      <input class="interest" type="text">
-      <span class="material-symbols-outlined">
-        percent
-      </span>
-    </label>
-    <label>Mortgage Type</label>
-    <label>Repayment
-      <input class="repayment" type="radio">
-    </label>
-    <label>Interest Only
-      <input class="interest-only" type="radio">
-    </label>
-    <label>
-      <button><img src="./assets/images/icon-calculator.svg" alt="img-calculator">Calculate Repayments</button>
-    </label>
+		<div class="container">
+			<!-- Empty results start -->
+			<!-- Empty results end -->
+			<!-- Completed results start -->
+			<h3>
+				Your results
+			</h3>
+			<p>
+				Your results are shown below based on the information you provided.
+				To adjust the results, edit the form and click “calculate repayments” again.
+			</p>
+			<div>
 
-  </form>
-  <br>
+				Your monthly repayments
+				<h1 class="test-operations">
+					<span class="material-symbols-outlined">
+						currency_pound
+					</span>TEST: 0
+				</h1>
 
+				Total you'll repay over the term
+				<!-- Completed results end -->
+				<h3 class="test-operations-repayment">
+					<span class="material-symbols-outlined">
+						currency_pound
+					</span>TEST: 0
+				</h3>
 
+				Total interest
+				<h3 class="test-operations-interest">
+					<span class="material-symbols-outlined">
+						currency_pound
+					</span>TEST: 0
+				</h3>
+			</div>
+		</div>
+	</main>
 
-
-
-  <!-- Empty results start -->
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided.
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  <h1 class="test-operations">
-    <span class="material-symbols-outlined">
-      currency_pound
-    </span>TEST: 0
-  </h1>
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  <h3 class="test-operations-repayment">
-    <span class="material-symbols-outlined">
-      currency_pound
-    </span>TEST: 0
-  </h3>
-
-  Total interest
-
-  <h3 class="test-operations-interest">
-    <span class="material-symbols-outlined">
-      currency_pound
-    </span>TEST: 0
-  </h3>
-
-
-
-
-
-
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Armando Estevez</a>.
-  </footer>
-  <script src="./script.js"></script>
+	<footer class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+		Coded by <a href="#">Armando Estevez</a>.
+	</footer>
+	<script src="./script.js"></script>
 </body>
 
 </html>
