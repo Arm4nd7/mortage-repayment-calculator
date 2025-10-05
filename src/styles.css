@@ -29,6 +29,7 @@ main {
     grid-template-areas:
         "container-formulario       container-results"
     ;
+    background-color: white;
 }
 
 form {
@@ -42,7 +43,6 @@ form {
         "h2          clear-all"
         "label-1     label-1"
         "label-2     label-3"
-        /* "label-3     label-3" */
         "lable-0     label-0"
         "label-4     label-4"
         "label-5     label-5"
@@ -176,7 +176,7 @@ form {
     align-items: center;
     width: 305px;
     margin-top: 1rem;
-    background-color: rgba(165, 200, 51, 0.563);
+    background-color: hsl(61, 70%, 52%);
     border-radius: 35px;
 }
 
@@ -212,17 +212,76 @@ form {
 
 p {
     grid-area: p;
-    color: rgb(76, 123, 123);
+    color: hsl(200, 24%, 40%);
 }
 
 /* tarjeta de respuesta */
 .container-results {
-    display: grid;
-    grid-area: container-results;
-    grid-template-columns: auto;
-    grid-template-areas:
-        "titulo"
-        "resultados"
-    ;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: hsl(202, 55%, 16%);
+    border-radius: 0px 00px 0px 88px;
+}
+
+
+.container-results p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: hsl(203, 41%, 72%);
+
+}
+
+.container-results h2 {
+    color: white;
+
+}
+
+.container-empty {
+    display: none;
     padding: 2rem;
+}
+
+.container-no-empty {
+    /* display: none; */
+    text-align: start;
+    padding: 2.5rem;
+}
+
+/* tarjeta peqena con numero */
+.resultados {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    text-align: start;
+    border-radius: 10px;
+    background-color: hsl(201, 48%, 12%);
+    border-top: solid 4px hsl(61, 70%, 52%);
+
+}
+
+.resultados h1 {
+    font-size: xxx-large;
+    color: hsl(61, 70%, 52%);
+    margin-bottom: 20px;
+}
+
+.resultados p{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.resultados hr {
+    border: none;
+    height: 1px;
+    background-color: hsl(200, 24%, 40%);
+}
+
+.test-interest{
+    display: none;
 }
