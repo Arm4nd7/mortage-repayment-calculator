@@ -82,7 +82,7 @@ ratioInterest.addEventListener("click", () => {
     resultInterest.textContent = formatter.format(totalInterest);
 })
 
-//LO SE, SE PUDE OPTIMIZAR, PERO NO SE ME HA OCURRIDO ALGO MAS RAPIDO
+//LO SE, SE PUDE OPTIMIZAR, acepto sugerencias.
 
 function sinLlenarCampo() {
     if (mortageAmount.value.trim() === "") {
