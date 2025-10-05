@@ -17,37 +17,39 @@
 	<main>
 		<div class="container-formulario">
 			<form action="">
-				<h2>Mortgage Calculator</h2>
-				<div>
+				<div class="titles">
+					<h2>Mortgage Calculator</h2>
 					<label class="clear-all" for="clear-all">Clear All</label>
 					<input hidden id="clear-all" type="submit">
 				</div>
+
 
 				<label class="label-1">
 					<p>Mortgage Amount</p>
 					<div class="div1">
 						<span class="span-1">£</span>
-						<input id="A" class="item amount" type="text">
+						<input class="amount" type="text">
 					</div>
 					<p class="mensaje-error me-1">This field is required</p>
 				</label>
-
-				<label class="label-2">
-					<p>Mortgage Term</p>
-					<div class="div2">
-						<input id="B" class="item term" type="text">
-						<span class="span-2">years</span>
-					</div>
-					<p class="mensaje-error me-2">This field is required</p>
-				</label>
-				<label class="label-3">
-					<p>Interest Rate</p>
-					<div class="div3">
-						<input id="C" class="item interest" type="text">
-						<span class="span-3">%</span>
-					</div>
-					<p class="mensaje-error me-3">This field is required</p>
-				</label>
+				<div class="time-percent">
+					<label class="label-2">
+						<p>Mortgage Term</p>
+						<div class="div2">
+							<input class="term" type="text">
+							<span class="span-2">years</span>
+						</div>
+						<p class="mensaje-error me-2">This field is required</p>
+					</label>
+					<label class="label-3">
+						<p>Interest Rate</p>
+						<div class="div3">
+							<input class="interest" type="text">
+							<span class="span-3">%</span>
+						</div>
+						<p class="mensaje-error me-3">This field is required</p>
+					</label>
+				</div>
 				<label class="label-0">
 					<p>Mortgage Type</p>
 				</label>
@@ -71,11 +73,8 @@
 				</label>
 			</form>
 		</div>
-		<!-- Empty results start -->
-		<!-- Empty results end -->
-		<!-- Completed results start -->
-		<!-- Completed results end -->
 		<div class="container-results">
+			<!-- Empty results start -->
 			<div class="container-empty">
 				<img src="./assets/images/illustration-empty.svg" alt="image-empty">
 				<h2>Results shown here</h2>
@@ -84,6 +83,9 @@
 					your monthly repayments would be.
 				</p>
 			</div>
+			<!-- Empty results end -->
+
+			<!-- Completed results start -->
 			<div class="container-no-empty">
 				<h2>Your results</h2>
 				<p>
@@ -95,25 +97,20 @@
 					<h1 class="test-operations">
 						<span>£</span>TEST: 0
 					</h1>
-
 					<hr>
-
 					<p>Total you'll repay over the term</p>
 					<h2 class="test-operations-repayment">
-						<span>
-							£
-						</span>TEST: 0
+						<span>£</span>TEST: 0
 					</h2>
 					<div class="test-interest">
-						<p >Total interest</p>
+						<p>Total interest</p>
 						<h2 class="test-operations-interest">
-							<span>
-								£
-							</span>TEST: 0
+							<span>£</span>TEST: 0
 						</h2>
 					</div>
 				</div>
 			</div>
+			<!-- Completed results end -->
 		</div>
 	</main>
 	<footer class="attribution">
