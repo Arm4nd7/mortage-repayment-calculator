@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 body {
@@ -27,45 +27,43 @@ main {
     /* importante el overflow si no no vale el border radious */
     overflow: hidden;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-template-areas:
         "container-formulario       container-results"
     ;
     background-color: white;
 }
 
-form {
-    all: unset;
-    display: grid;
-    padding: 2rem;
-    grid-area: container-formulario;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "h2          clear-all"
-        "label-1     label-1"
-        "label-2     label-3"
-        "lable-0     label-0"
-        "label-4     label-4"
-        "label-5     label-5"
-        "label-6     label-6"
-    ;
-    background-color: white;
+.container-formulario {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
 
 }
 
-.clear-all {
+form .time-percent {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: end;
+    gap: 1rem;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titles label {
     text-decoration: underline;
 }
 
 .label-1 {
     display: grid;
-    grid-area: label-1;
     grid-template-columns: auto;
     gap: 10px;
     grid-template-areas:
@@ -102,9 +100,7 @@ form {
 .label-2 {
     display: grid;
     gap: 10px;
-    justify-content: flex-start;
-    grid-area: label-2;
-    /* grid-template-columns: auto; */
+    grid-template-columns: auto;
     grid-template-areas:
         "   p   "
         "   term   "
@@ -115,10 +111,8 @@ form {
 
 .label-3 {
     display: grid;
-    justify-content: flex-end;
     gap: 10px;
-    grid-area: label-3;
-    /* grid-template-columns: auto; */
+    grid-template-columns: auto;
     grid-template-areas:
         "   p   "
         "   interest   "
@@ -153,10 +147,9 @@ form {
 
 .label-4 {
     display: grid;
-    grid-area: label-4;
     font-size: large;
     font-weight: 550;
-
+    cursor: pointer;
 }
 
 .label-4 div,
@@ -166,26 +159,24 @@ form {
     padding: 15px;
     border-radius: 5px;
     border: solid 1.3px rgba(46, 94, 94, 0.445);
-
 }
 
 .label-5 {
     display: grid;
-    grid-area: label-5;
     font-size: large;
     font-weight: 550;
-
+    cursor: pointer;
 }
 
 .label-6 {
     display: grid;
-    grid-area: label-6;
     justify-content: center;
     align-items: center;
     width: 305px;
     margin-top: 1rem;
-    background-color: hsl(61, 70%, 52%);
     border-radius: 35px;
+    cursor: pointer;
+    background-color: hsl(61, 70%, 52%);
 }
 
 .label-6 div {
@@ -244,17 +235,14 @@ p {
     margin-top: 20px;
     margin-bottom: 30px;
     color: hsl(203, 41%, 72%);
-
 }
 
 .container-results h2 {
     color: white;
-
 }
 
 .container-empty {
     display: block;
-    /* display: none; */
     padding: 2rem;
 }
 
@@ -275,7 +263,6 @@ p {
     border-radius: 10px;
     background-color: hsl(201, 48%, 12%);
     border-top: solid 4px hsl(61, 70%, 52%);
-
 }
 
 .resultados h1 {
@@ -284,7 +271,7 @@ p {
     margin-bottom: 20px;
 }
 
-.resultados p{
+.resultados p {
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -295,7 +282,7 @@ p {
     background-color: hsl(200, 24%, 40%);
 }
 
-.test-interest{
+.test-interest {
     display: none;
 }
 
@@ -303,9 +290,82 @@ p {
 
 /* MENSAJES DE ERROR */
 
-.mensaje-error{
+.mensaje-error {
     display: none;
     grid-area: mensaje-error;
     font-size: small;
     color: hsl(4, 69%, 50%);
+}
+
+
+/* ################################################################################### */
+
+/* DISEÑO MOVIL */
+
+
+
+@media(min-width: 100px) and (max-width: 480px) {
+    main {
+        display: block;
+        margin: 0;
+    }
+
+    form .time-percent {
+        display: block;
+    }
+
+    .label-2 div {
+        justify-content: space-between;
+    }
+
+    .label-3 div {
+        justify-content: space-between;
+    }
+
+    .titles {
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+@media(min-width: 481px) and (max-width: 767px) {
+
+    main {
+        display: block;
+        margin: 3rem;
+    }
+
+    form .time-percent {
+        display: block;
+    }
+
+    .label-2 div {
+        justify-content: space-between;
+    }
+
+    .label-3 div {
+        justify-content: space-between;
+    }
+
+    .titles {
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+@media(min-width: 768px) and (max-width:1024px) {
+    main {
+        display: block;
+        margin: 4rem;
+    }
+
+    form .time-percent {
+        justify-content: space-around;
+    }
+
+    .titles {
+        flex-direction: column;
+        gap: 14px;
+    }
+
 }
