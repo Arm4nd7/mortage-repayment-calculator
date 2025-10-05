@@ -70,6 +70,8 @@ form {
     gap: 10px;
     grid-template-areas:
         "   p   "
+        "   amount   "
+        "   mensaje-error   "
     ;
 }
 
@@ -105,6 +107,8 @@ form {
     /* grid-template-columns: auto; */
     grid-template-areas:
         "   p   "
+        "   term   "
+        "   mensaje-error   "
     ;
 }
 
@@ -117,6 +121,8 @@ form {
     /* grid-template-columns: auto; */
     grid-template-areas:
         "   p   "
+        "   interest   "
+        "   mensaje-error   "
     ;
 }
 
@@ -291,4 +297,15 @@ p {
 
 .test-interest{
     display: none;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* MENSAJES DE ERROR */
+
+.mensaje-error{
+    display: none;
+    grid-area: mensaje-error;
+    font-size: small;
+    color: hsl(4, 69%, 50%);
 }
