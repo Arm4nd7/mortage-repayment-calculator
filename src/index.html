@@ -20,32 +20,33 @@
 				<h2>Mortgage Calculator</h2>
 				<div>
 					<label class="clear-all" for="clear-all">Clear All</label>
-					<input hidden id="clear-all" type="reset">
+					<input hidden id="clear-all" type="submit">
 				</div>
 
 				<label class="label-1">
 					<p>Mortgage Amount</p>
-					<div>
-						<span>
-							£
-						</span>
-						<input class="amount" type="text">
+					<div class="div1">
+						<span class="span-1">£</span>
+						<input id="A" class="item amount" type="text">
 					</div>
+					<p class="mensaje-error me-1">This field is required</p>
 				</label>
 
 				<label class="label-2">
 					<p>Mortgage Term</p>
-					<div>
-						<input class="term" type="text">
-						<span>years</span>
+					<div class="div2">
+						<input id="B" class="item term" type="text">
+						<span class="span-2">years</span>
 					</div>
+					<p class="mensaje-error me-2">This field is required</p>
 				</label>
 				<label class="label-3">
 					<p>Interest Rate</p>
-					<div>
-						<input class="interest" type="text">
-						<span>%</span>
+					<div class="div3">
+						<input id="C" class="item interest" type="text">
+						<span class="span-3">%</span>
 					</div>
+					<p class="mensaje-error me-3">This field is required</p>
 				</label>
 				<label class="label-0">
 					<p>Mortgage Type</p>
