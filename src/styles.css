@@ -23,8 +23,10 @@ main {
     display: grid;
     margin: 5rem;
     justify-content: center;
+    border-radius: 2rem;
+    /* importante el overflow si no no vale el border radious */
+    overflow: hidden;
     align-items: center;
-    border: solid 1.3px rgba(46, 94, 94, 0.445);
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "container-formulario       container-results"
@@ -215,7 +217,11 @@ p {
     color: hsl(200, 24%, 40%);
 }
 
-/* tarjeta de respuesta */
+
+/* ******************************************************************** */
+
+/* TARJETA RESPUESTAS */
+
 .container-results {
     display: flex;
     flex-direction: column;
@@ -241,12 +247,13 @@ p {
 }
 
 .container-empty {
-    display: none;
+    display: block;
+    /* display: none; */
     padding: 2rem;
 }
 
 .container-no-empty {
-    /* display: none; */
+    display: none;
     text-align: start;
     padding: 2.5rem;
 }

@@ -7,9 +7,12 @@ let mortageTerm = document.querySelector(".term");
 let interestRate = document.querySelector(".interest");
 let ratioRepayment = document.querySelector(".repayment");
 let ratioInterest = document.querySelector(".interest-only");
+let noEmpty = document.querySelector(".container-no-empty");
+let yesEmpty = document.querySelector(".container-empty");
+let clearAll = document.getElementById("clear-all");
 
 //inicializando variable global
-let i,n, B, D, operation, totalPayment = 0;
+let i, n, B, D, operation, totalPayment = 0;
 
 //formateo de moneda
 //uso de API Intl.NumberFormat
@@ -19,8 +22,17 @@ let formatter = new Intl.NumberFormat("en-US", {
 });
 
 
+clearAll.addEventListener("click", () => {
+    noEmpty.style.display = "none"
+    yesEmpty.style.display = "block"
+})
+
 buttonCalculator.addEventListener("click", (e) => {
     e.preventDefault();
+
+    noEmpty.style.display = "block"
+    yesEmpty.style.display = "none"
+
     //calculo de interes
     i = (parseFloat(interestRate.value) / 100) / 12;
     //total de pagos
